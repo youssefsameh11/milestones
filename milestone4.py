@@ -1,0 +1,37 @@
+class Student:
+    def __init__(self, name, student_id, grade):
+        self.name = name
+        self.student_id = student_id
+        self.grade = grade
+
+    def display_info(self):
+        print(self.name)
+        print(self.student_id)
+        print(self.grade)
+
+
+class UndergraduateStudent(Student):
+    def __init__(self, name, student_id, grade, major):
+        super().__init__(name, student_id, grade)
+        self.major = major
+
+    def display_info(self):
+        super().display_info()
+        print(self.major)
+
+
+class GraduateStudent(Student):
+    def __init__(self, name, student_id, grade, program_title):
+        super().__init__(name, student_id, grade)
+        self.program_title = program_title
+
+    def display_info(self):
+        super().display_info()
+        print(self.program_title)
+
+
+under = UndergraduateStudent("rohyem", "2500365", 90, "CS")
+grad1 = GraduateStudent("Mohamed", "25002345", 60, "Engineering")
+
+under.display_info()
+grad1.display_info()
